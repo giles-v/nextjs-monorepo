@@ -4,8 +4,9 @@ A proof of concept for an attempt to set up a monorepo-style NextJS serving impl
 
 The key precepts we're trying to fit into is:
 
-- NextJS running from a subdirectory, in this POC that's `sites/www.example.com`
-- Application code distributed around the repo, for example here `apps/foo/*.tsx`
+- Using Yarn v4 to start the server with `yarn dev`
+- NextJS running from a subdirectory with a disjoint workspace, in this POC that's `sites/www.example.com`
+- Application code distributed around the repo, for example here `apps/foo/*`
 - Module resolution throughout the repo is "repo-absolute", which is exemplified by the import of `js/button` from `apps/foo/header.tsx`.
 
 All of this code at the time of writing seems to typecheck fine. However, at runtime we get:
